@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paint Application using HTML5 Canvas</title>
+    <!--Stylesheet to setup layout-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!--Color Picker stylesheet library-->
+    <link href="css/colorpicker.css" rel="stylesheet" type="text/css" />
+    <!--Jquery library-->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <!--Jquery UI library to create slider-->
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <!--Color Picker javascript library-->
+    <script type="text/javascript" src="js/colorpicker.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!--Introduction title-->
+        <h1 style="text-align:center">Paint Application using HTML5 Canvas</h1>
+        <!--Tools for selecting the shape-->
+        <ul class="tools">
+            <li class="selected">
+                <a href="#" title="Pen">&#9998;</a>
+            </li>
+            <li>
+                <a href="#" title="Line">|</a>
+            </li>
+            <li>
+                <a href="#" title="Square">
+                    <i class="square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Rect">
+                    <i class="rectangle"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Circle">
+                    <i class="square radius"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Ellipse">
+                    <i class="rectangle radius"></i>
+                </a>
+            </li>
+            <li>
+                <a class="undo" href="#" title="Undo">&#8630;</a>
+            </li>
+            <li>
+                <a class="redo" href="#" title="Redo">&#8631;</a>
+            </li>
+            <li>
+                <div id="colorSelector">
+                    <div style="background-color:#0000FF;"></div>
+                </div>
+            </li>
+        </ul>
+        <!--Addtional selectors like stroke style, fill style and stroke size-->
+        <div class="additional_selectors">
+            <div class="shape_style">
+                <h4>Select shape style</h4>
+                <input type="radio" name="shape_style" id="fill" value="fill" />
+                <label for="fill">Fill</label>
+                <input type="radio" name="shape_style" id="stroke" value="stroke" />
+                <label for="stroke">Stroke</label>
+            </div>
+            <div class="shape_style">
+                <h4>Select stroke size<input type="text" id="amount" readonly></h4>
+                <!--Stroke size selector-->
+                <div class="stroke_size">
+                    <div id="slider-range-max"></div>
+                </div>
+            </div>
+        </div>
+        <!--Our main canvas element from drawing shapes -->
+        <div id="sketch">
+            <canvas id="paint"></canvas>
+        </div>
+    </div>
+    <!--Our javascript implementing paint functionality-->
+    <script type="text/javascript" src="js/paint.js"></script>
+</body>
+
+</html>

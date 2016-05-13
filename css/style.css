@@ -1,0 +1,172 @@
+html, body {
+  background-color: #DDDDDD;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+h1{
+  color: #2220DC;
+  font-family: arial;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  margin-top:2em;
+}
+.container {
+  margin: 0 auto;
+  width: 900px;
+}
+
+/*--- Our permanent canvas ----*/
+#sketch {
+  background-color: #FFFFFF;
+  border: 10px solid #808080;
+  height: 400px;
+  margin: 20px auto 0;
+  position: relative;
+  width: 900px;
+}
+
+/*--- Our temporary canvas placed directly above our permanent canvas----*/
+#tmp_canvas {
+	position: absolute;
+	left: 0px; right: 0;
+	bottom: 0; top: 0;
+	cursor: crosshair;
+}
+
+
+/*---- Tools styles -----*/
+.tools {
+  display: inline-block;
+  margin: 20px 0 0 230px;
+  padding: 0;
+}
+.tools li {
+  background-color: #e8e8e8;
+  border: 2px solid #000000;
+  float: left;
+  font-size: 24px;
+  height: 36px;
+  line-height: 32px;
+  list-style: none outside none;
+  margin: 0 4px;
+  text-align: center;
+  width: 36px;
+}
+.tools li.selected {
+  background-color: #BCC9FF;
+}
+.tools li.slider {
+  background-color: rgba(0, 0, 0, 0);
+  border: medium none;
+  margin-left: 30px;
+  margin-top: 12px;
+  width: 190px;
+}
+.tools li a {
+  color: #000000;
+  display: inline-block;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
+}
+.tools li a .square {
+  background:#000000;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+.tools li a .rectangle{
+  background:#000000;
+  display: inline-block;
+  height: 10px;
+  width: 16px;
+}
+.tools li a .radius {
+	border-radius:50%;
+}
+
+/*----- Color palette ----*/
+#colorSelector {
+	position: relative;
+	width: 36px;
+	height: 36px;
+}
+#colorSelector div {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 30px;
+	height: 30px;
+	background: url(../images/select.png) center;
+}
+
+/*----- Additional tools like stroke size, fill, stroke  ----*/
+.additional_selectors {
+  margin: 0 auto;
+  width: 640px;
+}
+.shape_style h4 {
+  display: inline-block;
+  margin-left: 40px;
+}
+.additional_selectors .shape_style {
+  display: inline-block;
+}
+.additional_selectors .shape_style #amount {
+  margin: 0 10px;
+  text-align: center;
+  width: 15px;
+}
+.additional_selectors .shape_style .stroke_size {
+  display: inline-block;
+  width: 160px;
+}
+
+
+/* Styles to implement the stroke size slider
+----------------------------------*/
+.ui-slider {
+	position: relative;
+	background-color:#cccccc;
+	text-align: left;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 1.2em;
+	cursor: default;
+	-ms-touch-action: none;
+	touch-action: none;
+  background-color: #999999;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	background-color:#ffffff;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+.ui-slider-horizontal {
+  height: 0.9em;
+  top: 4px;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.2em;
+	margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
